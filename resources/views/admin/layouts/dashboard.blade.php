@@ -48,7 +48,7 @@
             top: 0;
             width: 260px;
             height: 100vh;
-            background: linear-gradient(180deg, #fffaf7 0%, #fff3ed 55%, #ffe9df 100%);
+        background: linear-gradient(180deg, #fffaf7 0%, #fff3ed 55%, #ffe9df 100%);
             border-right: 1px solid #f2ddd3;
             padding: 25px 18px;
             z-index: 1000;
@@ -60,8 +60,8 @@
             display: flex;
             align-items: center;
             gap: 12px;
-
-            color: #171717;
+            
+    color: #171717;
             text-decoration: none;
             padding: 0 10px;
             margin-bottom: 35px;
@@ -130,7 +130,7 @@
         }
 
         .sidebar-menu a.active {
-            background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
+background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
             color: white;
             box-shadow: 0 8px 20px rgba(240, 92, 47, 0.20);
         }
@@ -689,7 +689,7 @@
                 </a>
             </li>
 
-
+        
 
         </ul>
         <div class="sidebar-bottom">
@@ -729,7 +729,7 @@
                 <div class="page-title">
 
                     <h4>
-                        Young Enterpreneur Fest
+                        Dashboard
                     </h4>
 
                     <small>
@@ -994,7 +994,7 @@
             </div>
 
 
-
+           
         </div>
 
     </main>
@@ -1150,7 +1150,7 @@
                         ],
 
                         borderWidth: 0,
-                        backgroundColor: ['#f05c2f', '#ff9a78', '#ffd1c0']
+                    backgroundColor: ['#f05c2f', '#ff9a78', '#ffd1c0']
 
                     }
 
