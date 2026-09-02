@@ -1,74 +1,73 @@
-
 <header class="topbar">
 
-            <div class="d-flex align-items-center gap-3">
+    <div class="d-flex align-items-center gap-3">
 
-                <button
-                    class="mobile-menu"
-                    id="mobileMenu">
-                    <i class="bi bi-list"></i>
-                </button>
+        <button
+            class="mobile-menu"
+            id="mobileMenu">
+            <i class="bi bi-list"></i>
+        </button>
 
-                <div class="page-title">
+        <div class="page-title">
 
-                    <h4>
-                                              Young Enterpreneur Fest
+            <h4>
+                Young Enterpreneur Fest
 
-                    </h4>
+            </h4>
 
-                    <small>
-                        Welcome back! Here's what's happening today.
-                    </small>
+            <small>
+                Welcome back! Here's what's happening today.
+            </small>
 
-                </div>
+        </div>
 
-            </div>
+    </div>
 
 
-            <div class="topbar-right">
+    <div class="topbar-right">
 
-                <div class="search-box">
+        <div class="search-box">
 
-                    <i class="bi bi-search"></i>
+            <i class="bi bi-search"></i>
 
-                    <input
-                        type="text"
-                        placeholder="Search...">
+            <input
+                type="text"
+                placeholder="Search...">
 
-                </div>
+        </div>
 
-                <div class="notification">
+        <div class="notification">
 
-                    <i class="bi bi-bell"></i>
+            <i class="bi bi-bell"></i>
 
-                    <span class="badge bg-danger">
-                        3
-                    </span>
+            <span class="badge bg-danger">
+                3
+            </span>
 
-                </div>
+        </div>
 
-                <div class="profile">
+        <div class="profile">
 
-                    <img
-                        src="https://i.pravatar.cc/100?img=12"
-                        alt="Profile">
+            <img
+                src="https://i.pravatar.cc/100?img=12"
+                alt="Profile">
 
-                    <div class="profile-info">
+            <div class="profile-info">
 
-                        <strong>
-                            {{ auth()->user()->name }}
-                        </strong>
+                <strong>
+                    {{ auth()->user()->name }}
+                </strong>
 
-                        <small>
-                            {{ auth()->user()->email }}
-                        </small>
-
-                    </div>
-
-                    <i class="bi bi-chevron-down small"></i>
-
-                </div>
+                <small>
+                    {{ auth()->user()->email }}
+                </small>
 
             </div>
 
-        </header>
+            <i class="bi bi-chevron-down small"></i>
+
+        </div>
+
+    </div>
+
+</header>

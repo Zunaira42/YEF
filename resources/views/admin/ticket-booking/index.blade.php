@@ -1,13 +1,8 @@
 @extends('admin.layouts.app')
-
 @section('title', 'Ticket Bookings')
-
 @section('page-title', 'Ticket Bookings')
-
 @section('page-description', 'View and manage all ticket bookings.')
-
 @section('content')
-
 <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
@@ -16,8 +11,7 @@
                 View and manage all ticket bookings.
             </p>
         </div>
-
-        <a href="#" class="btn btn-primary">
+        <a href="{{ route('admin.ticket-booking.create') }}" class="btn btn-primary">
             <i class="bi bi-plus-lg"></i>
             New Booking
         </a>
@@ -35,127 +29,52 @@
             <table class="table align-middle mb-0">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>From</th>
-                        <th>To</th>
+                        <th class="text-center">#</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Number</th>
+                        <th class="text-center">City</th>
+                        <th class="text-center">Total Tickets</th>
+                        <th class="text-center">Actions</th>
                     </tr>
                 </thead>
 
                 <tbody>
-
-                    {{-- Static demo rows for now --}}
-
+                    @foreach ($tickets as $ticket)
                     <tr>
-                        <td>1</td>
-                        <td>#TB-1001</td>
-                        <td>John Doe</td>
-                        <td>New York</td>
-                        <td>Boston</td>
-                        <td>31 Aug 2026</td>
-                        <td>A12</td>
-                        <td>$120</td>
-                        <td>
-                            <span class="badge bg-success">
-                                Confirmed
-                            </span>
-                        </td>
-                        <td>
-                            <div class="d-flex gap-2">
+                        <td class="text-center">{{$ticket->id}}</td>
+                        <td class="text-center">{{$ticket-> name}}</td>
+                        <td class="text-center">{{$ticket-> email}}</td>
+                        <td class="text-center">{{$ticket-> number}}</td>
+                        <td class="text-center">{{$ticket-> city}}</td>
+                        <td class="text-center">{{$ticket-> tickets_count}}</td>
+                        <td class="text-center mx-auto">
+                            <div class="d-block gap-2">
 
-                                <a href="#"
+                                <a href="{{ route('admin.ticket-booking.show', $ticket->id) }}"
                                     class="btn btn-sm btn-outline-primary">
                                     <i class="bi bi-eye"></i>
                                 </a>
 
-                                <a href="#"
+                                <a href="{{ route('admin.ticket-booking.edit', $ticket->id) }}"
                                     class="btn btn-sm btn-outline-warning">
                                     <i class="bi bi-pencil"></i>
                                 </a>
 
-                                <a href="#"
-                                    class="btn btn-sm btn-outline-danger">
-                                    <i class="bi bi-trash"></i>
-                                </a>
+                                <form action="{{ route('admin.ticket-booking.destroy', $ticket->id) }}" method="POST"
+                                    onsubmit="return confirm('Are you sure you want to delete this ticket booking?')" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
 
                             </div>
                         </td>
+                        @endforeach
                     </tr>
 
-
-                    <tr>
-                        <td>2</td>
-                        <td>#TB-1002</td>
-                        <td>Sarah Smith</td>
-                        <td>Chicago</td>
-                        <td>Detroit</td>
-                        <td>02 Sep 2026</td>
-                        <td>B05</td>
-                        <td>$95</td>
-                        <td>
-                            <span class="badge bg-warning text-dark">
-                                Pending
-                            </span>
-                        </td>
-                        <td>
-                            <div class="d-flex gap-2">
-
-                                <a href="#"
-                                    class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-eye"></i>
-                                </a>
-
-                                <a href="#"
-                                    class="btn btn-sm btn-outline-warning">
-                                    <i class="bi bi-pencil"></i>
-                                </a>
-
-                                <a href="#"
-                                    class="btn btn-sm btn-outline-danger">
-                                    <i class="bi bi-trash"></i>
-                                </a>
-
-                            </div>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>3</td>
-                        <td>#TB-1003</td>
-                        <td>Michael Brown</td>
-                        <td>Dallas</td>
-                        <td>Houston</td>
-                        <td>05 Sep 2026</td>
-                        <td>C08</td>
-                        <td>$75</td>
-                        <td>
-                            <span class="badge bg-danger">
-                                Cancelled
-                            </span>
-                        </td>
-                        <td>
-                            <div class="d-flex gap-2">
-
-                                <a href="#"
-                                    class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-eye"></i>
-                                </a>
-
-                                <a href="#"
-                                    class="btn btn-sm btn-outline-warning">
-                                    <i class="bi bi-pencil"></i>
-                                </a>
-
-                                <a href="#"
-                                    class="btn btn-sm btn-outline-danger">
-                                    <i class="bi bi-trash"></i>
-                                </a>
-
-                            </div>
-                        </td>
-                    </tr>
 
                 </tbody>
 
@@ -179,15 +98,16 @@
 
     .table thead th {
         background: #f8fafc;
-        color: #64748b;
-        font-size: 12px;
+        color: black !important;
+        font-size: 18px !important;
         font-weight: 700;
-        padding: 14px 12px;
+        padding: 14px 15px !important;
         border-bottom: 1px solid #e5e7eb;
         white-space: nowrap;
     }
 
     .table tbody td {
+        font-size: 15px !important;
         padding: 15px 12px;
         border-bottom: 1px solid #f1f5f9;
         color: #475569;

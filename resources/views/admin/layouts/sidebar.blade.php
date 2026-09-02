@@ -25,9 +25,9 @@
             </li>
 
             <li>
-                <a href="#">
-                    <i class="bi bi-bar-chart-line"></i>
-                    Analytics
+                <a href="{{ route('admin.ticket-booking.index') }}">
+                    <i class="bi bi-ticket-perforated"></i>
+                   Ticket Book
                 </a>
             </li>
 

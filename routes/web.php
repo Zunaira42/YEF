@@ -16,7 +16,7 @@ Route::get('/exhibitors', function () {
     return view('app.exhibitors');
 });
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->as('admin.')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
