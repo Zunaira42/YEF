@@ -7,21 +7,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('app.index');
-});
+})->name('home');
 Route::get('/ticket-booking', function () {
     return view('app.ticket-booking');
-});
+})->name('ticket-booking');
+
+Route::get('/stall-booking', function () {
+    return view('app.stall-booking');
+})->name('stall-booking');
+
 
 Route::get('/exhibitors', function () {
-    return view('app.exhibitors');
-});
+    return view('app.exhibitor');
+})->name('exhibitor');
+
+Route::get('/guest', function () {
+    return view('app.guest');
+})->name('guest');
 
 Route::prefix('admin')->as('admin.')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
-// ticket-booking
-route::resource('/ticket-booking', TicketbookingController::class);
+    // ticket-booking
+    Route::resource('/ticket-booking', TicketbookingController::class);
+    // Route::resource('/stall-booking', s::class);
 
     Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

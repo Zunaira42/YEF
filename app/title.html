@@ -1,0 +1,613 @@
+<section class="tr-module-wrapper grey-bg padd">
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="row align-items-stretch">
+                        <div class="col-lg-7 col-md-6 col-12 order-lg-1 order-md-1 order-2 d-flex">
+                            <div class="card" style="border-radius: 15px;">
+                                <div class="card-body">
+                                    <h3 class="md-heading mb-4" style="color: #F15C2F;">
+                                        Course Overview
+                                    </h3>
+
+                                    <ul>
+                                        <li class="list mt-3">
+                                            AI is no longer just for tech experts — it's for everyone. This practical
+                                            one-month
+                                            programme at Enablers gives you the knowledge, tools, and hands-on
+                                            experience to
+                                            confidently use Artificial Intelligence in your daily personal and
+                                            professional life
+                                            — no technical background required.
+
+                                        </li>
+                                    </ul>
+
+                                    <hr class="line mt-5 mb-5">
+
+                                    <h3 class="md-heading mb-4" style="color: #F15C2F;">
+                                        Learning Outcomes
+                                    </h3>
+
+                                    <ul>
+                                        <li class="list mt-3">Understand how AI works</li>
+                                        <li class="list mt-3">Use popular AI tools with confidence</li>
+                                        <li class="list mt-3">Boost your personal and professional productivity</li>
+                                        <li class="list mt-3">Apply AI to your own field</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 col-12 order-lg-2 order-md-2 order-1 mb-lg-0 mb-md-0 mb-5">
+                            <div class="training-leads-card">
+                                @include('enablers.app.trainings.partials.training-lead-form', ['trainingId' =&gt;
+                                $training-&gt;id])
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="tr-module-heading mt-5">
+                                <h3 class="md-heading text-orange mb-4 mt-3">
+                                    Module Breakdown
+                                </h3>
+
+                            </div>
+
+                                                    <div class="accordion" id="accordionExample">
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            1 </label>
+                                        <h5 class="pl-md-title">One-button lab</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Clone the class repo. docker compose
+                                                up. Open WebUI, n8n, Langflow
+                                                all respond.</li>
+
+                                            <li style="font-weight: normal;">Pull the class chat model and embed
+                                                model in Ollama. Write the model
+                                                card.</li>
+
+                                            <li style="font-weight: normal;">Ports bible: 11434, 5678, 7860, 8080.
+                                                127.0.0.1 not localhost if
+                                                IPv6 breaks Ollama.</li>
+
+                                            <li style="font-weight: normal;">Docker n8n → Ollama via
+                                                host.docker.internal:11434.</li>
+
+                                            <li style="font-weight: normal;">Lab pass: every student chats in Open
+                                                WebUI. Screenshot in the repo.
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            2 </label>
+                                        <h5 class="pl-md-title">What an agent is</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Chat = one turn. Agent = plan → tool →
+                                                observe → repeat → stop.</li>
+
+                                            <li style="font-weight: normal;">Draw the loop on paper before any extra
+                                                nodes.</li>
+
+                                            <li style="font-weight: normal;">Grok bot: class FAQ only (“where is the
+                                                compose file?”).</li>
+
+                                            <li style="font-weight: normal;">Lab: take a normal chat and rewrite it
+                                                as a loop with one fake tool.
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            3 </label>
+                                        <h5 class="pl-md-title">First n8n agent, brain = Ollama</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Chat Trigger → AI Agent → Ollama Chat
+                                                Model. Simple Memory.</li>
+
+                                            <li style="font-weight: normal;">System prompt as a contract: role,
+                                                allowed tools, “I don’t know.”
+                                            </li>
+
+                                            <li style="font-weight: normal;">Read the execution trace. Circle plan
+                                                vs tool vs final.</li>
+
+                                            <li style="font-weight: normal;">Lab: homework helper that may only use
+                                                the system prompt + chat. No
+                                                tools.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            4 </label>
+                                        <h5 class="pl-md-title">Tools, structured output, human gate</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Two or three tools max: sheet append,
+                                                calculator, Discord/webhook.
+                                            </li>
+
+                                            <li style="font-weight: normal;">Force JSON out of the model (output
+                                                parser / structured prompt).
+                                                Agent B cannot eat poetry.</li>
+
+                                            <li style="font-weight: normal;">HITL: draft, wait, then send.</li>
+
+                                            <li style="font-weight: normal;">OpenCode + Grok writes {{ $json... }}
+                                                expressions. Student explains
+                                                every line.</li>
+
+                                            <li style="font-weight: normal;">Lab: club secretary — chat in, JSON
+                                                summary, row in a sheet, no
+                                                auto-post.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            5 </label>
+                                        <h5 class="pl-md-title">Vectors in Langflow</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Embed two sentences. Show why “cat”
+                                                sits near “kitten.”</li>
+
+                                            <li style="font-weight: normal;">Canvas: File → split → Ollama
+                                                Embeddings → Chroma → retrieve → chat.
+                                            </li>
+
+                                            <li style="font-weight: normal;">Chunk size as a knob. Watch answers
+                                                change.</li>
+
+                                            <li style="font-weight: normal;">Lab: 10-page class PDF. 10 questions.
+                                                Mark grounded vs invented.
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            6 </label>
+                                        <h5 class="pl-md-title">Agentic RAG in n8n</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Ingest flow: PDF/CSV → loader →
+                                                embeddings → vector store.</li>
+
+                                            <li style="font-weight: normal;">Chat flow: AI Agent + query-data tool +
+                                                Ollama + memory.</li>
+
+                                            <li style="font-weight: normal;">If chunks are weak, the agent asks a
+                                                question instead of inventing.
+                                            </li>
+
+                                            <li style="font-weight: normal;">Lab: “ask the club handbook.” Failures
+                                                become eval rows on GitHub.
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            7 </label>
+                                        <h5 class="pl-md-title">Memory that lasts longer than the window</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">“Remember this” tool writes to a sheet
+                                                or JSON file.</li>
+
+                                            <li style="font-weight: normal;">Next session, agent reads that file as
+                                                a tool, plus the handbook
+                                                RAG.</li>
+
+                                            <li style="font-weight: normal;">Lab: student sets a preference on
+                                                Monday; agent uses it on
+                                                Wednesday.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            8 </label>
+                                        <h5 class="pl-md-title">Multi-agent</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Two small agents, not one god-bot.
+                                                Researcher retrieves. Explainer
+                                                writes at student level and cites.</li>
+
+                                            <li style="font-weight: normal;">Shared brief in a Set node. Explainer
+                                                only sees notes, not the raw
+                                                firehose.</li>
+
+                                            <li style="font-weight: normal;">Safety lab: poison a PDF with “ignore
+                                                the handbook.” Agent must
+                                                refuse.</li>
+
+                                            <li style="font-weight: normal;">Allowlist tools. No personal data in
+                                                prompts. No send without a
+                                                human.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            9 </label>
+                                        <h5 class="pl-md-title">Evals as a product</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Run, score, commit the sheet. Bad week
+                                                = the score went
+                                                down.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            10 </label>
+                                        <h5 class="pl-md-title">Front door + tunnel</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Cloudflare Tunnel or an n8n webhook URL
+                                                a teacher can open
+                                                on a phone.</li>
+
+                                            <li style="font-weight: normal;">Still no public write tools without
+                                                HITL.</li>
+
+                                            <li style="font-weight: normal;">Lab: someone not in the room asks the
+                                                handbook bot three
+                                                questions.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            11 </label>
+                                        <h5 class="pl-md-title">GitHub as the classroom</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Repo: /compose /n8n-workflows
+                                                /langflow-flows /prompts
+                                                /evals /model-cards.</li>
+
+                                            <li style="font-weight: normal;">README: compose up, which Ollama
+                                                models, which URLs, how to
+                                                import JSON.</li>
+
+                                            <li style="font-weight: normal;">Lab: swap machines. Partner boots your
+                                                project in 20
+                                                minutes.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            12 </label>
+                                        <h5 class="pl-md-title">Meet the Python brain</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Python track exposes POST /ask (they
+                                                build it). You only
+                                                call it.</li>
+
+                                            <li style="font-weight: normal;">n8n HTTP Request → their API → you keep
+                                                Discord/sheet/HITL
+                                                on the canvas.</li>
+
+                                            <li style="font-weight: normal;">Compare local-Ollama-in-n8n vs
+                                                Ollama-in-Python on the same
+                                                20 questions.</li>
+
+                                            <li style="font-weight: normal;">Lab: club secretary hands stay in n8n;
+                                                thinking can move to
+                                                /ask.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            13 </label>
+                                        <h5 class="pl-md-title">Build</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Pick one system. Must include: compose
+                                                lab, Ollama default,
+                                                Open WebUI or chat trigger, RAG, remember-this memory, two
+                                                cooperating agents or agent+critic, HITL on send,
+                                                20-question eval, GitHub README, a URL someone outside the
+                                                room can try.</li>
+
+                                            <li style="font-weight: normal;">Study buddy: handbook RAG + quiz writer
+                                                + parent-safe
+                                                summary (human sends).</li>
+
+                                            <li style="font-weight: normal;">Club ops: Discord in → crew → sheet +
+                                                announcement draft.
+                                            </li>
+
+                                            <li style="font-weight: normal;">Teacher desk: rubric RAG + first-pass
+                                                comment (teacher
+                                                publishes).</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            14 </label>
+                                        <h5 class="pl-md-title">Build</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Club ops: Discord in → crew → sheet +
+                                                announcement draft.
+                                            </li>
+
+                                            <li style="font-weight: normal;">Teacher desk: rubric RAG + first-pass
+                                                comment (teacher
+                                                publishes).</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            15 </label>
+                                        <h5 class="pl-md-title">Safety + reproduce</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Injection test, allowlist test,
+                                                “classmate clones and runs”
+                                                test.</li>
+
+                                            <li style="font-weight: normal;">Optional: one MCP-or-HTTP tool named
+                                                handbook.search that
+                                                both tracks call.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card pl-md-card">
+                                <div class="card-header">
+                                    <button
+                                        class="text-decoration-none btn btn-link d-flex flex-row align-items-center justify-content-between w-100"
+                                        data-toggle="" data-target="#module5">
+                                        <label
+                                            class="pl-md-label orange-bg py-2 px-3 text-white font-weight-bold rounded">MODULE
+                                            16 </label>
+                                        <h5 class="pl-md-title">Demo day</h5>
+                                    </button>
+                                </div>
+
+                                <div class="collapse-not show">
+                                    <div class="card-body">
+                                        <ul class="tr-module-inner">
+
+                                            <li style="font-weight: normal;">Five minutes: the loop on screen, one
+                                                live tool call, one
+                                                citation, one human gate.</li>
+
+                                            <li style="font-weight: normal;">Scorecard: offline?, cited?, human in
+                                                charge?,
+                                                reproducible?, hours returned?</li>
+
+                                            <li style="font-weight: normal;">You pass when a younger student can use
+                                                it and a classmate
+                                                can rebuild it. Not when the canvas looks busy.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .accordion -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
