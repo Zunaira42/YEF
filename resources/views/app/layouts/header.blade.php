@@ -19,11 +19,12 @@
                 <nav id="navmenu" class="navmenu order-3 order-xl-2">
 
                     <ul>
-                        <li><a href="#">Book Tickets</a></li>
-                        <li><a href="#">Sponsors & Partners</a></li>
-                        <li><a href="#">Guest of Honour</a></li>
-                        <li><a href="#">Exhibitors</a></li>
-                        <li class="order-first order-xl-last btn-started d-none d-xl-inline-block"><a href="#" class="btn-started">Book
+                        <li><a href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li><a href="{{ route('ticket-booking') }}">Book Tickets</a></li>
+                        <li><a href="{{ route('guest') }}">Guest of Honour</a></li>
+                        <li><a href="{{ route('exhibitor') }}">Exhibitors</a></li>
+                        <li class="order-first order-xl-last btn-started d-none d-xl-inline-block"><a href="{{ route('stall-booking') }}" class="btn-started">Book
                                 a Stall</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
