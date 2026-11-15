@@ -22,7 +22,7 @@
                         <li><a href="{{ route('home') }}">Home</a>
                         </li>
                         <li><a href="{{ route('ticket-booking') }}">Book Tickets</a></li>
-                        <li><a href="{{ route('guest') }}">Guest of Honour</a></li>
+                        <li><a href="{{ route('guest.index') }}">Guest of Honour</a></li>
                         <li><a href="{{ route('exhibitor') }}">Exhibitors</a></li>
                         <li class="order-first order-xl-last btn-started d-none d-xl-inline-block"><a href="{{ route('stall-booking') }}" class="btn-started">Book
                                 a Stall</a></li>
