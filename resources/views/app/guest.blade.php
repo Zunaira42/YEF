@@ -130,10 +130,12 @@
         color: #4B5563;
         line-height: 1.6;
     }
-.org-line{
-    border-bottom : 2px solid  #F05C2F;
-    width: 65px;
-}
+
+    .org-line {
+        border-bottom: 2px solid #F05C2F;
+        width: 65px;
+    }
+
     .main-mini-text {
         font-size: 20px;
         color: #F05C2F;
@@ -143,19 +145,21 @@
 
     @media (max-width: 992px) {
         #banner.banner {
-        background: url("{{ asset('young-entrepreneur-page/assets/images/Pages/guests/guest-banner.png') }}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: right;
+            background: url("{{ asset('young-entrepreneur-page/assets/images/Pages/guests/guest-banner.png') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
 
-    }
-   
+        }
+
         #box-img .card img {
             height: 100%
         }
- .main-mini-text {
-    font-size: 10px;
- }
+
+        .main-mini-text {
+            font-size: 10px;
+        }
+
         #box-img {
             padding: 25px 0;
         }
@@ -173,7 +177,7 @@
             font-size: 14px;
             line-height: normal;
             padding: 0%;
-           color: #000000;
+            color: #000000;
         }
 
 
@@ -192,7 +196,7 @@
             <div class="col-lg-7 col-12">
                 <p class="main-mini-text">Inspiring A Brighter Tomorrow</p>
                 <h1 class="main-heading display-5 fw-bold">Meet Our <br> <span> Guests of Honor </span></h1>
-               <div class="org-line"></div>
+                <div class="org-line"></div>
                 <p class="sub-heading mt-3">
                     Distinguished Leaders, visionaries and change-makes <br class="mobile-hidden"> joining us at Young Entrepreneur Fest 2026 </p>
             </div>
@@ -204,7 +208,27 @@
 <div id="box-img" class="img">
     <div class="container">
         <div class="row ">
-          
+            @foreach ($guests as $guest)
+            <div class="col-lg-3 col-12 mt-lg-4 mt-3">
+                <div class="card guest-card h-100">
+                    <div class="position-relative">
+                        @if ($guest->logo_image_path)
+                        <img src="{{ asset('storage/' . $guest->logo_image_path) }}" class="card-img-top guest-img" alt="{{ $guest->name }}">
+                        @endif
+                        @if (!in_array(trim($guest->name), ['Saqib Azhar', 'Faisal Azhar'], true))
+                        <span class="badge guest-badge position-absolute top-0 end-0 m-3 d-flex align-items-center">
+                            <span class="star-icon">★</span>{{ $guest->guest_type }}
+                        </span>
+                        @endif  
+                    </div>
+                    <div class="card-body text-start py-0">
+                        <h5 class="guest-name mb-2">{{ $guest->name }}</h5>
+                        <hr class="guest-divider my-2">
+                        <p class="guest-designation mb-3">{{ $guest->designation }}</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
         <div class="row justify-content-center text-center">
             <div class="footer-decorations mt-4">

@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\admin\GuestController as AdminGuestController;
+use App\Http\Controllers\Admin\GuestController as ControllersAdminGuestController;
 use App\Http\Controllers\Admin\TicketbookingController;
+use App\Http\Controllers\app\guestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +24,7 @@ Route::get('/exhibitors', function () {
     return view('app.exhibitor');
 })->name('exhibitor');
 
-Route::get('/guest', function () {
-    return view('app.guest');
-})->name('guest');
+Route::resource('guest', guestController::class)->names('guest');
 
 Route::prefix('admin')->as('admin.')->group(function () {
     Route::get('/dashboard', function () {
@@ -31,7 +32,7 @@ Route::prefix('admin')->as('admin.')->group(function () {
     })->middleware(['auth', 'verified'])->name('dashboard');
     // ticket-booking
     Route::resource('/ticket-booking', TicketbookingController::class);
-    // Route::resource('/stall-booking', s::class);
+    Route::resource('/guest', ControllersAdminGuestController::class);
 
     Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
