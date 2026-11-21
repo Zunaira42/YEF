@@ -611,16 +611,16 @@
         <ul class="sidebar-menu">
 
             <li>
-                <a href="#" class="active">
+                <a href="{{ route('admin.dashboard') }}" class="active">
                     <i class="bi bi-speedometer2"></i>
                     Dashboard
                 </a>
             </li>
 
             <li>
-                <a href="#">
+                <a href="{{ route('admin.guest.index') }}">
                     <i class="bi bi-bar-chart-line"></i>
-                    Analytics
+                    Guests
                 </a>
             </li>
 
