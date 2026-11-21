@@ -6,23 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Admin Dashboard</title>
-
-    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         rel="stylesheet">
 
-    <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
@@ -48,7 +43,7 @@
             top: 0;
             width: 260px;
             height: 100vh;
-        background: linear-gradient(180deg, #fffaf7 0%, #fff3ed 55%, #ffe9df 100%);
+            background: linear-gradient(180deg, #fffaf7 0%, #fff3ed 55%, #ffe9df 100%);
             border-right: 1px solid #f2ddd3;
             padding: 25px 18px;
             z-index: 1000;
@@ -60,8 +55,8 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            
-    color: #171717;
+
+            color: #171717;
             text-decoration: none;
             padding: 0 10px;
             margin-bottom: 35px;
@@ -130,7 +125,7 @@
         }
 
         .sidebar-menu a.active {
-background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
+            background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
             color: white;
             box-shadow: 0 8px 20px rgba(240, 92, 47, 0.20);
         }
@@ -611,23 +606,23 @@ background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
         <ul class="sidebar-menu">
 
             <li>
-                <a href="#" class="active">
+                <a href="{{ route('admin.dashboard') }}" class="active">
                     <i class="bi bi-speedometer2"></i>
                     Dashboard
                 </a>
             </li>
 
             <li>
-                <a href="#">
+                <a href="{{ route('admin.guest.index') }}">
                     <i class="bi bi-bar-chart-line"></i>
-                    Analytics
+                    Guests
                 </a>
             </li>
 
             <li>
-                <a href="#">
+                <a href="{{ route('admin.ticket-booking.index') }}">
                     <i class="bi bi-people"></i>
-                    Customers
+                    Ticket Bookings
                 </a>
             </li>
 
@@ -689,7 +684,7 @@ background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
                 </a>
             </li>
 
-        
+
 
         </ul>
         <div class="sidebar-bottom">
@@ -994,7 +989,7 @@ background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
             </div>
 
 
-           
+
         </div>
 
     </main>
@@ -1150,7 +1145,7 @@ background: linear-gradient(135deg, #f05c2f 0%, #ff8565 100%);
                         ],
 
                         borderWidth: 0,
-                    backgroundColor: ['#f05c2f', '#ff9a78', '#ffd1c0']
+                        backgroundColor: ['#f05c2f', '#ff9a78', '#ffd1c0']
 
                     }
 

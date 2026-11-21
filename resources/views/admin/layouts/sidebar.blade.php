@@ -18,23 +18,23 @@
         <ul class="sidebar-menu">
 
             <li>
-                <a href="#" class="active">
+                <a href="{{ route('admin.dashboard') }}" class="active">
                     <i class="bi bi-speedometer2"></i>
                     Dashboard
                 </a>
             </li>
 
             <li>
-                <a href="{{ route('admin.ticket-booking.index') }}">
+                <a href="{{ route('admin.guest.index') }}">
                     <i class="bi bi-ticket-perforated"></i>
-                   Ticket Book
+                  Guests
                 </a>
             </li>
 
             <li>
-                <a href="#">
+                <a href="{{ route('admin.ticket-booking.index') }}">
                     <i class="bi bi-people"></i>
-                    Customers
+                    Ticket Bookings
                 </a>
             </li>
 
